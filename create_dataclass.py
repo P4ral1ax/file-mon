@@ -3,6 +3,7 @@ File that helps create a new file or directory dataclass object for inital
 creation and if the file changes and the data needs to be updated
 """
 
+
 import os
 from datastructure import *
 def get_name(path):
