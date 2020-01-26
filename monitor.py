@@ -8,7 +8,6 @@ from create_dataclass import *
 After the UI is collected and all the files are set to be monitored, this
 is where the program will do the monitoring.
 """
-
 def check_dir(files, directories, index):
     dir_changed = False
     dir = directories[index]
@@ -35,12 +34,10 @@ def check_dir(files, directories, index):
     if info.st_nlink != dir.links:
         print("DIR Changed : " + dir.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
         dir_changed = True
-
     log.close()
 
     if dir_changed:
         update_directory(files, directories, index)
-
 
 
 def check_file(files, directories, index):
@@ -101,7 +98,6 @@ def update_directory(files, directories, index):
     temp = make_directory(dir.path)
     directories[index] = temp
     print(temp)
-
 
 
 def monitor_main(files, directories):

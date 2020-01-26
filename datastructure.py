@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import Union
 from typing import List
 
+
 @dataclass
 class File:
     __slots__ = ['name', 'path', 'size', 'perm', 'time_acc', 'time_mod', 'time_met', 'user', 'group', 'links']
@@ -20,6 +21,7 @@ class File:
     user     : int
     group    : int
     links    : int
+
 
 @dataclass
 class Directory:

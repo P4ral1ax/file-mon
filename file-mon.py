@@ -16,6 +16,7 @@ from create_dataclass import *
 def path_exists(path):
     return path.exists(path)
 
+
 def make_file_array():
     file_array = []
     file = open('files.txt')
@@ -25,7 +26,6 @@ def make_file_array():
             file_array.append(make_file(line))
         else:
             print("File \'" + line + "\' is not valid path")
-
     return(file_array)
 
 
@@ -73,7 +73,6 @@ def single_mode():
         else:
             print("\nFile \'" + filepath + "\' is not valid path")
             single_mode()
-
     elif type == '2':
         directory = input("Directory Path : ")
         if path.exists(directory):
