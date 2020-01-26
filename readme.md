@@ -1,4 +1,4 @@
-# file_mon 
+# file-mon 
 This is a program that checks files or directories to check if they are changed. This is a good
 IR tool for detecting any tampering to important files in the Linux filesystem. 
 
