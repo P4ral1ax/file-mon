@@ -16,7 +16,8 @@ def check_dir(files, directories, index):
 
     #Dir Permissions
     if info.st_mode != dir.perm:
-        print("Permissions : " + dir.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
+        print("Permissions : " + dir.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old Perm: " \
+        + str(oct(dir.perm)) + "\n    New Perm: " + str(oct(info.st_mode)), file=log, end='\n')
         dir_changed = True
     #Dir Access Time
     if info.st_atime != dir.time_acc:
@@ -48,35 +49,40 @@ def check_file(files, directories, index):
 
     #File Size
     if info.st_size != file.size:
-        print("Size Changed : " + file.name + " | time : " + time.strftime('%H:%M:%S') + "\n    Old Size: " + str(file.size) + "B\n    New Size: " + str(info.st_size) + "B", file=log, end='\n')
+        print("Size Changed : " + file.name + " | time : " + \ time.strftime('%H:%M:%S') + "\n    Old Size: " \
+        + str(file.size) + "B\n    New Size: " + str(info.st_size) + "B", file=log, end='\n')
         file_changed = True
     #File Permissions
     if info.st_mode != file.perm:
-        print("Permissions : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
+        print("Permissions Changed: " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old Perm: " \
+        + str(oct(file.perm)) + "\n    New Perm: " + str(oct(info.st_mode)), file=log, end='\n')
         file_changed = True
     #File Access Time
     if info.st_atime != file.time_acc:
-        print("Accessed : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
+        print("File Accessed : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
         file_changed = True
     #File Modify Time
     if info.st_mtime != file.time_mod:
         print("File Modify Time : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
         file_changed = True
     #File Metadata Time
-    if info.st_mode != file.perm:
+    if info.st_ctime != file.time_met:
         print("File Metadata Time : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
         file_changed = True
     #File UID changed
     if info.st_uid != file.user:
-        print("File UID : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
+        print("File UID Changed: " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old UID: " \
+        + str(file.user) + "\n    New UID: " + str(info.st_uid), file=log, end='\n')
         file_changed = True
     #File GID Changed
     if info.st_gid != file.group:
-        print("File GID : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
+        print("File GID Changed : " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old GID: " \
+        + str(file.group) + "\n    New GID: " + str(info.st_gid), file=log, end='\n')
         file_changed = True
     #File Hard Links Amount Changed
     if info.st_nlink != file.links:
-        print("Hard Links : " + file.name + " | time : " + time.strftime('%H:%M:%S'), file=log, end='\n')
+        print("Hard Links : " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old Links: " \
+        + str(file.links) + "\n    New Links: " + str(info.st_nlink), file=log, end='\n')
         file_changed = True
 
     log.close()
