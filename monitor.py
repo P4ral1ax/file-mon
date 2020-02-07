@@ -16,7 +16,7 @@ def check_dir(files, directories, index):
 
     #Dir Permissions
     if info.st_mode != dir.perm:
-        print("Permissions : " + dir.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old Perm: " \
+        print("Permissions : " + dir.name + " | time : " + time.strftime('%H:%M:%S') + "\n    Old Perm: " \
         + str(oct(dir.perm)) + "\n    New Perm: " + str(oct(info.st_mode)), file=log, end='\n')
         dir_changed = True
     #Dir Access Time
@@ -49,12 +49,12 @@ def check_file(files, directories, index):
 
     #File Size
     if info.st_size != file.size:
-        print("Size Changed : " + file.name + " | time : " + "\ time.strftime('%H:%M:%S') + \n    Old Size:  " \
+        print("Size Changed : " + file.name + " | time : " +  time.strftime('%H:%M:%S') + "\n    Old Size:  " \
         + str(file.size) + "B\n    New Size: " + str(info.st_size) + "B", file=log, end='\n')
         file_changed = True
     #File Permissions
     if info.st_mode != file.perm:
-        print("Permissions Changed: " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old Perm: " \
+        print("Permissions Changed: " + file.name + " | time : " + time.strftime('%H:%M:%S') + "\n    Old Perm: " \
         + str(oct(file.perm)) + "\n    New Perm: " + str(oct(info.st_mode)), file=log, end='\n')
         file_changed = True
     #File Access Time
@@ -71,17 +71,17 @@ def check_file(files, directories, index):
         file_changed = True
     #File UID changed
     if info.st_uid != file.user:
-        print("File UID Changed: " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old UID: " \
+        print("File UID Changed: " + file.name + " | time : " + time.strftime('%H:%M:%S') + "\n    Old UID: " \
         + str(file.user) + "\n    New UID: " + str(info.st_uid), file=log, end='\n')
         file_changed = True
     #File GID Changed
     if info.st_gid != file.group:
-        print("File GID Changed : " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old GID: " \
+        print("File GID Changed : " + file.name + " | time : " + time.strftime('%H:%M:%S') + "\n    Old GID: " \
         + str(file.group) + "\n    New GID: " + str(info.st_gid), file=log, end='\n')
         file_changed = True
     #File Hard Links Amount Changed
     if info.st_nlink != file.links:
-        print("Hard Links : " + file.name + " | time : " + time.strftime('%H:%M:%S')"\n    Old Links: " \
+        print("Hard Links : " + file.name + " | time : " + time.strftime('%H:%M:%S') + "\n    Old Links: " \
         + str(file.links) + "\n    New Links: " + str(info.st_nlink), file=log, end='\n')
         file_changed = True
 
