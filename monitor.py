@@ -61,8 +61,13 @@ def check_file(files, directories, index):
         pass
     #File Size
     if info.st_size != file.size:
+<<<<<<< HEAD
         print("Size Changed : " + file.name + " | time : " +  time.strftime('%H:%M:%S') + \
         "\n    Old Size: " + str(file.size) + "B\n    New Size: " + str(info.st_size) + "B", file=log, end='\n')
+=======
+        print("Size Changed : " + file.name + " | time : " + "\ time.strftime('%H:%M:%S') + \n    Old Size:  " \
+        + str(file.size) + "B\n    New Size: " + str(info.st_size) + "B", file=log, end='\n')
+>>>>>>> ae36cf4d6cf53a26b90249e865224d84ff8b4f09
         file_changed = True
     #File Permissions
     if info.st_mode != file.perm:
