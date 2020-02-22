@@ -8,7 +8,6 @@ def get_name(path):
     name = path.split('/')[-1]
     return(name)
 
-
 def make_file(path):
     f_name     = get_name(path)
     f_info     = os.stat(path)
