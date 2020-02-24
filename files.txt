@@ -1,4 +1,3 @@
 /etc/hosts
 /etc/init.d
 /etc/sudoers
-/sbin/emond
